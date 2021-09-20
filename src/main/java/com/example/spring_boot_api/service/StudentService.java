@@ -1,5 +1,6 @@
 package com.example.spring_boot_api.service;
 
+import com.example.spring_boot_api.erro.StudentNotFoundException;
 import com.example.springboot_main.entity.Student;
 
 import java.util.List;
@@ -9,4 +10,5 @@ public interface StudentService {
     List<Student> findAll();
     Student findById(long id);
     void deleteById(long id);
+    public Student getStudentId(long id)  throws StudentNotFoundException;
 }

@@ -1,7 +1,8 @@
 package com.example.spring_boot_api.service;
 
+import com.example.spring_boot_api.erro.StudentNotFoundException;
+import com.example.spring_boot_api.repository.StudentRepository;
 import com.example.springboot_main.entity.Student;
-import com.example.springboot_main.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,6 @@ import java.util.Optional;
 public class StudentServiceIml implements StudentService {
     @Autowired
     private StudentRepository studentRepository;
-
     @Override
     public void saveStudent(Student s) {
         studentRepository.save(s);
@@ -43,5 +43,15 @@ public class StudentServiceIml implements StudentService {
     public void deleteById(long id) {
         studentRepository.deleteById(Long.valueOf(id));
 
+    }
+
+    @Override
+    public Student getStudentId(long id) throws StudentNotFoundException {
+        Optional<Student>student =
+                studentRepository.findById(id);
+        if(!student.isPresent()) {
+            throw new StudentNotFoundException();
+        }
+        return student.get();
     }
 }

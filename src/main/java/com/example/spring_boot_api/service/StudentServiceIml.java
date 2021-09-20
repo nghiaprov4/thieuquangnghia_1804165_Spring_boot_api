@@ -1,7 +1,7 @@
 package com.example.spring_boot_api.service;
 
-import com.example.springboot_main.entity.Student;
-import com.example.springboot_main.repository.StudentRepository;
+import com.example.spring_boot_api.entity.Student;
+import com.example.spring_boot_api.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
-package com.example.springboot_main.repository;
+package com.example.spring_boot_api.repository;
 
-import com.example.springboot_main.entity.Student;
+import com.example.spring_boot_api.entity.Student;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
